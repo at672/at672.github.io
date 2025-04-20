@@ -38,19 +38,24 @@
         Much of the inspection process today relies on video or photo-based inspections conducted manually by trained professionals. This introduces delays, inconsistencies, and high labor costs. In many cases, municipalities also lack digitized records of their underground infrastructure. All of these gaps point toward opportunities for AI to assist.</p>
 
       <h2>3. Project Design and Objectives</h2>
+      <p> The project is divided into three primary components: </p>
       <ul>
         <li>Image interpretation of sewer environments using GenAI-powered models</li>
-        <li>Visual classification using few-shot prompting</li>
-        <li>Decision-support module with live and fallback grounding</li>
+        <li>Visual classification of structural and operational conditions using few-shot prompting</li>
+        <li>A decision-support module that performs live grounding against OSHA guidelines or, if needed, falls back to a vector database powered by RAG</li>
       </ul>
+    <p>These components demonstrate several advanced GenAI capabilities:
 
+        Multimodal understanding: interpreting images and generating structured descriptions
+        
+        Few-shot classification: adapting quickly to classify new examples with minimal labeled data
+        
+        Grounded decision-making: using live web results or vector search to anchor decisions in verifiable documents
+        
+        The goal is to build a lightweight but extensible system that mirrors what an expert might infer from visual inspections and guidance—augmented by automation.</p>
       <h2>4. Tools and Libraries Used</h2>
-      <ul>
-        <li>Gemini Pro Vision (Google)</li>
-        <li>Google Generative AI SDK</li>
-        <li>LangChain + FAISS</li>
-        <li>Pandas, Requests, Matplotlib</li>
-      </ul>
+      <p>This project was implemented using the Gemini Pro Vision AI model
+         (via Google’s Generative AI SDK) for multimodal image captioning and reasoning and Google Generative AI Python SDK for interacting with models. In addition, standard Python libraries were used.</p>
 
       <h2>5. Part 1: Image Analysis of Sewer Environments</h2>
       <p><strong>1.1 Dataset Setup:</strong> Images sourced from sewer inspections...</p>
@@ -78,9 +83,7 @@
 
   <footer class="ds-footer">
     <section>
-      <span>Project</span>
-      <h4>GenAI Wastewater Analysis</h4>
-      <p>Built as part of the Kaggle Capstone Project using Gemini Vision, LangChain, and RAG.</p>
+      <p>Built as part of the Kaggle Capstone Project.</p>
     </section>
     <div class="ds-copyright">
       &copy; 2025 by Avi Thakore. All rights reserved.
