@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI in the Sewers – GenAI Kaggle Project</title>
+  <!-- Main CSS -->
+  <link href="assets/css/blog.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="ds-header ds-fixed-header">
+    <div class="ds-header-inner">
+      <div class="ds-logo"><span></span>AI in the Sewers</div>
+    </div>
+  </header>
+
+  <main class="ds-work-details-section">
+    <div class="ds-work-det-hed">
+      <h1 class="ds-work-det-title">AI in the Sewers: Using GenAI to Analyze and Diagnose Wastewater Systems</h1>
+    </div>
+
+    <section class="ds-work-content-sec">
+      <h2>1. Introduction: Why Focus on Sewage?</h2>
+      <p>When we talk about exciting applications of artificial intelligence, sewage rarely makes the list.
+        Most people focus on areas like self-driving cars, advanced language models, or biomedical research.
+        But that’s exactly why wastewater systems deserve more attention. </p>
+
+        <p>Wastewater infrastructure—including sewer systems, treatment facilities, and supporting networks—operates out of sight and is often under-monitored. But when failures occur, the consequences can be serious for public health, safety, and the environment.
+        </p>
+        This blog and the accompanying notebook were developed as part of my Kaggle Capstone Project. The work explores a highly underutilized application of GenAI: analyzing and interpreting visual data from sewage infrastructure to support maintenance and diagnosis. Using multimodal models, RAG pipelines, and fallback strategies, I created a prototype pipeline that can help monitor aging infrastructure through AI-driven insights.</p>
+
+      <h2>2. What the Research Revealed</h2>
+      <p>To inform this project, I conducted a comprehensive review of the literature and industry reports on wastewater systems and infrastructure monitoring.
+
+        Wastewater systems present a variety of challenges: corroded pipes, blockages, biofilm formation, sludge buildup, broken baffles, root intrusions, and more. These issues can arise in both centralized sewage networks and decentralized setups. While the system types may vary, the underlying risks and the need for consistent inspection remain the same.
+        
+        Much of the inspection process today relies on video or photo-based inspections conducted manually by trained professionals. This introduces delays, inconsistencies, and high labor costs. In many cases, municipalities also lack digitized records of their underground infrastructure. All of these gaps point toward opportunities for AI to assist.</p>
+
+      <h2>3. Project Design and Objectives</h2>
+      <ul>
+        <li>Image interpretation of sewer environments using GenAI-powered models</li>
+        <li>Visual classification using few-shot prompting</li>
+        <li>Decision-support module with live and fallback grounding</li>
+      </ul>
+
+      <h2>4. Tools and Libraries Used</h2>
+      <ul>
+        <li>Gemini Pro Vision (Google)</li>
+        <li>Google Generative AI SDK</li>
+        <li>LangChain + FAISS</li>
+        <li>Pandas, Requests, Matplotlib</li>
+      </ul>
+
+      <h2>5. Part 1: Image Analysis of Sewer Environments</h2>
+      <p><strong>1.1 Dataset Setup:</strong> Images sourced from sewer inspections...</p>
+      <p><strong>1.2 Automated Captioning:</strong> Each image passed through Gemini Vision for expert-style captioning.</p>
+      <p><strong>1.3 Few-Shot Classification:</strong> Prompt includes annotated examples like \"clogged\" or \"corroded\"...</p>
+      <p><strong>1.4 Model Comparison:</strong> Contrast direct vision model vs. caption + text reasoning.</p>
+      <p><strong>1.5 (Deprecated):</strong> Automatic image fetch module for integration with external data sources.</p>
+      <p><strong>1.6 Error Handling:</strong> Example outputs for invalid images included below.</p>
+      <img src="invalid_image_example.png" alt="Invalid image analysis example" />
+
+      <h2>6. Part 2: Visual Assessment of Sewer Conditions</h2>
+      <p><strong>2.1 Prompt Setup:</strong> Model is shown examples of healthy vs. critical infrastructure images.</p>
+      <p><strong>2.2 Explanation:</strong> Each prediction includes a confidence score and a brief rationale.</p>
+      <p><strong>2.3 Manual Review:</strong> Results align well with real-world observations, such as root intrusion and baffle corrosion.</p>
+
+      <h2>7. Part 3: Grounded Decision-Making Using Live and Local Search</h2>
+      <p><strong>3.1 Overview:</strong> Goal is to ground AI recommendations in OSHA or EPA guidance.</p>
+      <p><strong>3.2 Live Search:</strong> A real-time query is made via the web when possible.</p>
+      <p><strong>3.3 Fallback Search:</strong> If rate-limited, the system queries a local vector DB of safety documents using RAG.</p>
+
+      <h2>8. Why This Work Matters</h2>
+      <p>This prototype demonstrates how GenAI can be practically applied in municipal infrastructure. With future improvements like full video parsing and GIS overlays, it could become a powerful tool in smart city planning.</p>
+    </section>
+  </main>
+
+  <footer class="ds-footer">
+    <section>
+      <span>Project</span>
+      <h4>GenAI Wastewater Analysis</h4>
+      <p>Built as part of the Kaggle Capstone Project using Gemini Vision, LangChain, and RAG.</p>
+    </section>
+    <div class="ds-copyright">
+      &copy; 2025 by Avi Thakore. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
